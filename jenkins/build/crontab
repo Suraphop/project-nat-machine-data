@@ -1,0 +1,6 @@
+# START CRON JOB
+PATH=/usr/local/bin
+#* * * * * python3 /app/hello.py > /proc/1/fd/1 2>/proc/1/fd/2
+#* * * * * python3 /app/hello_2.py > /proc/1/fd/1 2>/proc/1/fd/2
+* * * * * python3 /app/main.py > /proc/1/fd/1 2>/proc/1/fd/2
+# END CRON JOB

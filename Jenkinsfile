@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        PASS = credentials('registry-pass') 
+        DOCKER_PASSWORD = credentials('mic_dockerhub_password')
+        PRODUCTION_SERVER_PASSWORD = credentials('production_server_password')
     }
     stages {
         stage('Build') {

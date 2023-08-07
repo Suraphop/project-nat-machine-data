@@ -1,5 +1,5 @@
 # data alarmlist
-ALARMLIST_PATH = '/data/data_alarmlist' #'/data/log_alarmlist' ,'D:/data/data_alarmlist'
+ALARMLIST_PATH = '/app/data/data_alarmlist' #'/data/log_alarmlist' ,'D:/data/data_alarmlist'
 ALARMLIST_TABLE = 'data_alarmlist'
 ALARMLIST_TABLE_COLUMNS ='''
                 registered_at datetime,
@@ -20,7 +20,7 @@ ALARMLIST_TABLE_COLUMNS_LOG ='''
             '''
 
 # data mc_status
-MC_STATUS_PATH = '/data/data_mc_status' #'/data/log_mc_status' ,'D:/data/data_mc_status'
+MC_STATUS_PATH = '/app/data/data_mc_status' #'/data/log_mc_status' ,'D:/data/data_mc_status'
 MC_STATUS_TABLE = 'data_mc_status'
 MC_STATUS_TABLE_COLUMNS ='''
             registered_at datetime,

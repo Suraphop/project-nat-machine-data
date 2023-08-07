@@ -1,14 +1,14 @@
 #!/bin/bash
 
 echo "***************************"
-echo "** deploy to production v.1.3***"
+echo "** deploy to production v.1.0.0**"
 echo "***************************"
 
-IMAGE="machine-data-project"
+IMAGE="tb-mcstatus"
 
-sshpass -p '1234' ssh -o StrictHostKeyChecking=no production@192.168.100.110 << ENDSSH
-    docker login -u suraphop -p $PASS
+sshpass -p $PRODUCTION_SERVER_PASSWORD ssh -o StrictHostKeyChecking=no production@10.128.16.210 << ENDSSH
+    docker login -u devopsmic -p $DOCKER_PASSWORD
     docker stop $IMAGE || true && docker rm $IMAGE || true
-    docker pull suraphop/$IMAGE:$BUILD_TAG
-    docker run --restart=always -d --name $IMAGE suraphop/$IMAGE:$BUILD_TAG
+    docker pull devopsmic/$IMAGE:$BUILD_TAG
+    docker run --restart=always -d -v /home/production/ftp/data/mc_status/TB/:/app/data/data_mc_status/ --name mic/$IMAGE devopsmic/$IMAGE:$BUILD_TAG 
 ENDSSH
